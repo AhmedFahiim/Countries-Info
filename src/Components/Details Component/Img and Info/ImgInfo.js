@@ -26,7 +26,7 @@ const ImgInfo = ({ data }) => {
           {data.name == "Israel" ? "Zionist occupation" : data.name}
         </h2>
         <div className="details-extra-data row">
-          <div className="first-col col-lg-4">
+          <div className="first-col col-lg-5">
             <div className="data-holder">
               <p className="data-word">Native Name:</p>
               <p className="data">{data.nativeName}</p>

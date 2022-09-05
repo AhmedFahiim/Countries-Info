@@ -1,10 +1,14 @@
 @use "../../../SASS/Variables" as *;
+@use "../../../SASS/Mixins" as *;
 
 .country-information {
   padding: 50px 0;
   justify-content: space-between;
   align-items: center;
-  height: 60vh;
+  min-height: 60vh;
+  @include media(LargeMax) {
+    gap: 20px;
+  }
   .country-details-flag {
     height: 100%;
     img {
@@ -37,6 +41,9 @@
           transition: $transition;
         }
       }
+    }
+    @include media(LargeMax) {
+      text-align: center;
     }
   }
 }
