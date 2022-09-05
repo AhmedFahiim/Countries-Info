@@ -79,9 +79,9 @@
     .borders-holder {
       display: flex;
       flex-wrap: wrap;
+      gap: 4px;
       .data {
         flex-basis: 15%;
-        display: inline-block;
         padding: 3px 15px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         margin-bottom: 8px;
