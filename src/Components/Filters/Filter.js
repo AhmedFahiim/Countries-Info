@@ -39,7 +39,7 @@ const Filter = () => {
       axios.get("https://restcountries.com/v2/all").then((response) =>
         setData(
           response.data.filter((e) => {
-            return e.name.toLowerCase().includes(inputValue.toLowerCase());
+            return e.name.toLowerCase() == inputValue.toLowerCase();
           })
         )
       );

@@ -13,7 +13,7 @@ const Details = () => {
   useEffect(() => {
     axios.get("https://restcountries.com/v2/all").then((response) => {
       let test = response.data.filter((e) => {
-        return e.name.split(" ").join("").includes(name);
+        return e.name.split(" ").join("") == name;
       });
       setDataa(test);
     });
