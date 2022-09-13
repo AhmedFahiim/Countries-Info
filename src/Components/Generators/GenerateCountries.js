@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import "./Generators.scss";
 
-import { Data } from "../../App/App";
+import { Data, CurrentPageContext, itemsPerPage } from "../../App/App";
 import { NavLink } from "react-router-dom";
 
 const GenerateCountries = () => {
   const [data] = useContext(Data);
+  const [currentPage] = useContext(CurrentPageContext);
+  let indexOfLastElement = currentPage * itemsPerPage;
 
-  return data.map((Country) => {
+  return data.slice(0, indexOfLastElement).map((Country) => {
     return (
       <div key={Country.name} className="country col-sm-6 col-md-4 col-lg-3">
         <NavLink to={`/${Country.name.split(" ").join("")}`}>

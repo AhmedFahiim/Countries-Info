@@ -7,3 +7,4 @@ export { default as GenerateDomains } from "./Generators/GenerateDomains";
 export { default as GenerateCurrencies } from "./Generators/GenerateCurrencies";
 export { default as GenerateLanguages } from "./Generators/GenerateLanguages";
 export { default as GenerateBorders } from "./Generators/GenerateBorders";
+export { default as PagesNavigation } from "./Pages Navigation/PagesNavigation";

@@ -1,4 +1,5 @@
 import { IoIosSearch } from "react-icons/io";
+import { BsArrowUp } from "react-icons/bs";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import {
   MdOutlineDarkMode,
@@ -12,4 +13,5 @@ export {
   MdOutlineDarkMode,
   MdOutlineLightMode,
   MdKeyboardArrowDown,
+  BsArrowUp,
 };

@@ -4,6 +4,28 @@
 
 .App {
   transition: $transition;
+  .scroll-top {
+    all: unset;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.6s;
+    .arrow-icon {
+      font-size: 22px;
+      transition: 0.6s;
+    }
+    &.show {
+      opacity: 1;
+    }
+  }
   &.light {
     background-color: $Light-Mode-Background;
     header {
@@ -40,6 +62,16 @@
           }
         }
       }
+      .navigation {
+        .load-more {
+          color: $light-mode-text;
+        }
+        .animation {
+          span {
+            background-color: $Dark-Mode-Background;
+          }
+        }
+      }
     }
     .details-page {
       .country-details-section {
@@ -58,6 +90,15 @@
           .data {
             background-color: #fff;
           }
+        }
+      }
+    }
+    .scroll-top {
+      border: 1px solid $Dark-Mode-Background;
+      &:hover {
+        background-color: $Dark-Mode-Background;
+        .arrow-icon {
+          color: #fff;
         }
       }
     }
@@ -101,6 +142,16 @@
           }
         }
       }
+      .navigation {
+        .load-more {
+          color: $Dark-Light-Mode-Elements-text;
+        }
+        .animation {
+          span {
+            background-color: $Light-Mode-Background;
+          }
+        }
+      }
     }
     .details-page {
       .country-details-section {
@@ -119,6 +170,18 @@
           .data {
             background-color: $Dark-Mode-Background;
           }
+        }
+      }
+    }
+    .scroll-top {
+      border: 1px solid $Light-Mode-Background;
+      .arrow-icon {
+        color: #fff;
+      }
+      &:hover {
+        background-color: $Light-Mode-Background;
+        .arrow-icon {
+          color: $light-mode-text;
         }
       }
     }

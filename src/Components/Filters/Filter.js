@@ -3,7 +3,7 @@ import "./Filter.scss";
 
 import { IoIosSearch, MdKeyboardArrowDown } from "../icons";
 
-import { Data } from "../../App/App";
+import { Data, CurrentPageContext } from "../../App/App";
 
 import axios from "axios";
 
@@ -13,6 +13,7 @@ const Filter = () => {
   const [inputValue, setInputValue] = useState("");
 
   const [, setData] = useContext(Data);
+  const [, setCurrentPage] = useContext(CurrentPageContext);
 
   const showListFun = () => {
     setShowList(!showList);
@@ -23,23 +24,23 @@ const Filter = () => {
   };
 
   useEffect(() => {
-    if (region != "Filter By Region") {
-      axios.get("https://restcountries.com/v2/all").then((response) =>
-        setData(
-          response.data.filter((e) => {
-            return e.region.toLowerCase().includes(region.toLowerCase());
-          })
-        )
-      );
-    }
+    setCurrentPage(1);
+    axios.get("https://restcountries.com/v2/all").then((response) =>
+      setData(
+        response.data.filter((e) => {
+          return e.region.toLowerCase().includes(region.toLowerCase());
+        })
+      )
+    );
   }, [region]);
 
   useEffect(() => {
     if (inputValue != "") {
+      setCurrentPage(1);
       axios.get("https://restcountries.com/v2/all").then((response) =>
         setData(
           response.data.filter((e) => {
-            return e.name.toLowerCase() == inputValue.toLowerCase();
+            return e.name.toLowerCase().includes(inputValue.toLowerCase());
           })
         )
       );
